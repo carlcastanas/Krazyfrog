@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Carl's Mind</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
+<link rel = "icon" href = "https://i.ibb.co/Ryp4bsF/Pics-Art-08-25-03-06-14-removebg-preview.png" type = "image/x-icon">
+</head>
+<body>
+
+<script type="application/x-glsl" id="sky-vertex">  
+  varying vec2 vUV;
+  void main() {  
+  vUV = uv;
+  vec4 pos = vec4(position, 1.0);
+  gl_Position = projectionMatrix * modelViewMatrix * pos;
+  }
+</script>
+<script type="application/x-glsl" id="sky-fragment">  
+  uniform sampler2D texture;  
+  varying vec2 vUV;
+  void main() {  
+  vec4 sample = texture2D(texture, vUV);
+  gl_FragColor = vec4(sample.xyz, sample.w);
+  }
+</script>
+<div id="OHSHIT" class="wrap">
+  <div class="text">
+    uy gago parehhh nabangga mo ako!
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r77/three.min.js'></script>
+<script src='https://cdn.rawgit.com/mrdoob/three.js/r77/examples/js/shaders/CopyShader.js'></script>
+<script src='https://cdn.rawgit.com/mrdoob/three.js/r77/examples/js/shaders/DigitalGlitch.js'></script>
+<script src='https://cdn.rawgit.com/mrdoob/three.js/r77/examples/js/postprocessing/EffectComposer.js'></script>
+<script src='https://cdn.rawgit.com/mrdoob/three.js/r77/examples/js/postprocessing/RenderPass.js'></script>
+<script src='https://cdn.rawgit.com/mrdoob/three.js/r77/examples/js/postprocessing/MaskPass.js'></script>
+<script src='https://cdn.rawgit.com/mrdoob/three.js/r77/examples/js/postprocessing/ShaderPass.js'></script>
+<script src='https://cdn.rawgit.com/mrdoob/three.js/r77/examples/js/postprocessing/GlitchPass.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
